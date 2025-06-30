@@ -1,0 +1,151 @@
+#root {
+  max-width: 100% !important;
+}
+body{
+  width: 100vw !important;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.chatbox {
+  border: 1px solid gray;
+  padding: 2vw;
+  border-radius: 48px;
+  background: #1b3274;
+  color: white;
+  /* max-width: 60%; */
+}
+
+
+.inputbox {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.2vw;
+  height:50px ;
+  width: 50% !important;
+  font-size: medium;
+}
+.aiicon{
+  background-image: url('/static/ai.gif');
+  background-size: cover;
+  background-position: center;
+   box-shadow: 0 0 8px 0px #ff00cc;
+   /* border: 2px solid black; */
+  animation: borderColorChange 4s linear infinite;
+  min-width: 60vw;
+
+}
+.formbox{
+   border: 1px solid gray;
+   border-radius: 8px;
+   padding: 10px;
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: #1b3274;
+   color: white;
+}
+ 
+@keyframes borderColorChange {
+  0% {
+    /* box-shadow: 0 0 8px 2px #ff00cc; */
+       border: 5px solid #ff00cc;
+
+  }
+
+  25% {
+    /* box-shadow: 0 0 8px 2px #3333ff; */
+       border: 5px solid #3333ff
+
+  }
+
+  50% {
+    /* box-shadow: 0 0 8px 2px #00ffff; */
+       border: 5px solid #00ffff;
+  }
+
+  75% {
+    /* box-shadow: 0 0 8px 2px #ffffff; */
+           border: 5px solid  #ffffff;
+  }
+
+  75% {
+    /* box-shadow: 0 0 8px 2px #dfff4f; */
+           border: 5px solid #dfff4f;
+  }
+
+  100% {
+    /* box-shadow: 0 0 8px 2px #ff00cc; */
+           border: 5px solid #ff00cc;
+  }
+}
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.questionbox{
+  max-width: 60%;
+    text-align: left;
+    background: #4149b3e2;
+    padding: 1vw;
+    border-radius: 20px;
+}
+.answerbox{
+  max-width: 60%;
+    text-align: right;
+    background: #ac41b3f0;
+    padding: 1vw;
+    border-radius: 20px;
+}
+
+.nobtn{
+  background: transparent !important;
+  border: none !important;
+  color: rgb(41, 41, 112);
+}
+
+@media screen and (max-width:768px) {
+  .chatbox {
+      max-width: 90% !important;
+  }
+  .questionbox, .answerbox{
+    max-width: 80% !important;
+    padding: 2vw !important;
+  }
+  .inputbox{
+    width: 90%;
+  }
+}
