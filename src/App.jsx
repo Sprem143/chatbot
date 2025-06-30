@@ -9,7 +9,7 @@ import axios from 'axios';
 function App() {
 
   const local = 'http://localhost:8000'
-  const server = 'https://chatbot-4tip.onrender.com'
+  const server = 'https://chatbot-5d4p.onrender.com'
   const [question, setQuestion] = useState('')
   const [messages, setMessages] = useState([{ sender: 'ai', text: "You can ask Qustion only about Astro Nupur" },])
 
@@ -23,7 +23,7 @@ function App() {
     const userMessage = { sender: 'user', text: question };
     setMessages((prev) => [...prev, userMessage]);
     console.log(userMessage)
-    const res = await fetch(`${local}/query`, {
+    const res = await fetch(`${server}/query`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -43,7 +43,7 @@ function App() {
   const scrap_web = async () => {
     if (!url.trim()) return
     console.log(url)
-    let resp = await fetch(`${local}/scrap`, {
+    let resp = await fetch(`${server}/scrap`, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url })
@@ -55,7 +55,7 @@ function App() {
   const scrap_suburl = async () => {
     if (!url.trim()) return
     console.log(url)
-    let resp = await fetch(`${local}/suburl`, {
+    let resp = await fetch(`${server}/suburl`, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url })
@@ -70,7 +70,7 @@ function App() {
   const handleAddContent = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/add_content', {
+      const response = await fetch(`${server}/add_content`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ function App() {
 
   const [savedContent, setSavedContent] = useState('')
   async function getcontent() {
-    let result = await fetch('http://localhost:8000/get_content', {
+    let result = await fetch(`${server}/get_content`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ function App() {
   }
 
   async function deletecontent() {
-    let result = await fetch('http://localhost:8000/delete_all_content', {
+    let result = await fetch(`${server}/delete_all_content`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ function App() {
     formData.append("file", file);
 
     try {
-      const res = await axios.post(`${local}/upload_textfile`, formData, {
+      const res = await axios.post(`${server}/upload_textfile`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
